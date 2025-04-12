@@ -1,34 +1,46 @@
-// Import necessary modules
 const express = require('express');
+const ejs = require('ejs');
 const path = require('path');
-const mongoose = require('mongoose');
-require('dotenv').config();
+const methodOverride = require('method-override');
 
-// Initialize Express app
+// const mongoose = require('mongoose');
+// require('dotenv').config();
+
 const app = express();
 
-// Set up middleware to parse JSON and handle URL-encoded data
+
+// setting for the views directory and serving static files
+app.set('view engine' , ejs);
+app.set("views" , path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname , "public")));
+
+// setting the middlewares to accept post requests
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended:true}));
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+// to override post and get Request 
+app.use(methodOverride('_method'))
 
-// Set EJS as the view engine
-app.set('view engine', 'ejs');
+// // MongoDB connection URL using environment variable
+// const mongoURI = process.env.MONGO_URI; // Getting MongoDB URI from the .env file
 
-// MongoDB connection setup (Replace with your own MongoDB URI)
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
+// Connect to MongoDB
+// mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => console.log("MongoDB connected successfully"))
+//   .catch(err => console.error("MongoDB connection error:", err));
 
-// Set up routes
+// Example route for testing
 app.get('/', (req, res) => {
-    res.render('index');  // Renders 'index.ejs' from the views folder
+  res.render('index.ejs')
 });
-
-// Start the server
-const PORT = process.env.PORT || 3000;
+app.get('/signup' , (req, res)=>{
+    res.render('signup.ejs')
+})
+app.get('/login' , (req, res)=>{
+    res.render('login.ejs')
+})
+// Start the server using the PORT from .env file
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
