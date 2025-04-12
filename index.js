@@ -87,10 +87,17 @@ app.get('/login' , (req, res)=>{
     res.render('login.ejs')
 }) 
 // Post Response 
-app.post ('/upload' ,upload.single('image') , (req, res)=>{
-    res.send("File Uploaded SuccessFully")
-} ) 
-
+app.post('/upload', (req, res, next) => {
+    if (!(req.session) || !(req.session.userId)) {
+      return res.render('login', { error: 'Please login to upload images.' });
+    }
+    console.log(req.session);
+    console.log("request session userid " + req.session.userId);
+    next(); // Proceed to multer if user is authenticated
+  }, (req, res) => {
+    // Image was uploaded successfully
+    res.send("File Uploaded Successfully");
+  });
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
@@ -115,7 +122,7 @@ app.post('/login', async (req, res) => {
     }
   });
   
-  app.post('/signup', async (req, res) => {
+app.post('/signup', async (req, res) => {
     const { name, email, password } = req.body;
     const existingUser = await User.findOne({ email });
   
