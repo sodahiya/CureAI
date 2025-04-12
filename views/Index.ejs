@@ -14,10 +14,20 @@
       <h1 class="text-white text-2xl font-semibold">CureAI</h1>
       
       <!-- Buttons (Login/Signup) -->
-      <div>
-        <a href="/login" class="text-white mx-2 hover:underline">Login</a>
-        <a href="/signup" class="text-white mx-2 hover:underline">Sign Up</a>
+      
+      <div class="flex items-center">
+        <% if (userName) { %>
+          <div class="flex items-center space-x-6">
+            <p class="text-white text-lg font-semibold">Welcome, <%= userName %></p>
+            <p><a href="/logout" class="text-white text-base hover:underline">LogOut</a></p>
+          </div>
+        <% } else { %>
+          <a href="/login" class="text-white mr-4">Login</a>
+          <a href="/signup" class="text-white">Sign Up</a>
+        <% } %>
       </div>
+    </div>
+  </header>
     </div>
   </header>
 
