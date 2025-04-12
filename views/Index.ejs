@@ -38,7 +38,7 @@
       <div class="text-center">
         <h2 class="text-xl mb-4">Upload Your Image</h2>
         <form action="/upload" method="POST" enctype="multipart/form-data">
-          <input type="file" name="image" class="border-2 p-2 rounded-lg cursor-pointer bg-blue-500 text-white hover:bg-blue-600 transition-all" required>
+          <input type="file" name="image" class="border-2 p-2 rounded-lg cursor-pointer bg-blue-500 text-white hover:bg-blue-600 transition-all" accept="image/*" capture="camera" required >
           <button type="submit" class="mt-4 px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Upload</button>
         </form>
       </div>
