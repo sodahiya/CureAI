@@ -50,7 +50,12 @@ ollama pull llava
 ```bash
 python Python/main.py
 ```
-### 4. Run the Express.js
+### 5. Install dev dependencies
+
+```bash
+npm install
+```
+### 6. Run the Express.js
 
 ```bash
 node Index.js
