@@ -4,6 +4,10 @@ This project is a FastAPI-based backend integrated with Ollama for AI-powered sk
 ---
 ## Usage
 
+
+https://github.com/user-attachments/assets/e639fa7a-2bdd-4d9b-87c5-8c6833c382bc
+
+
 ![WhatsApp Image 2025-04-12 at 21 25 51](https://github.com/user-attachments/assets/dd6aa5f9-1052-4f3b-b1a4-9e49bb22d2fa)
 ![WhatsApp Image 2025-04-12 at 21 25 51 (1)](https://github.com/user-attachments/assets/2edc91cf-e2d3-46c2-9333-c038f8958155)
 ![WhatsApp Image 2025-04-12 at 21 25 52](https://github.com/user-attachments/assets/74d9e371-139f-4629-b8cf-b7e071c6ccd0)
