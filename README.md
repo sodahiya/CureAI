@@ -44,27 +44,23 @@ Make sure you have [Ollama](https://ollama.com/) installed and the llava model d
 ```bash
 ollama pull llava
 ```
-### 4. Run the MongoDB Server
 
-```bash
-net start MongoDB
-
-### 5. Run the FastAPI Server
+### 4. Run the FastAPI Server
 
 ```bash
 python Python/main.py
 ```
-### 6. Install dev dependencies
+### 5. Install dev dependencies
 
 ```bash
 npm install
 ```
-### 7. Run the Express.js
+### 6. Run the Next.js
 
 ```bash
-node Index.js
+npm run dev
 ```
-It’ll start on http://127.0.0.1:8000
+It’ll start on http://127.0.0.1:3000
 
 ---
 
