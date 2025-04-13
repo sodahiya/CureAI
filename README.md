@@ -44,18 +44,22 @@ Make sure you have [Ollama](https://ollama.com/) installed and the llava model d
 ```bash
 ollama pull llava
 ```
+### 4. Run the MongoDB Server
 
-### 4. Run the FastAPI Server
+```bash
+net start MongoDB
+
+### 5. Run the FastAPI Server
 
 ```bash
 python Python/main.py
 ```
-### 5. Install dev dependencies
+### 6. Install dev dependencies
 
 ```bash
 npm install
 ```
-### 6. Run the Express.js
+### 7. Run the Express.js
 
 ```bash
 node Index.js
