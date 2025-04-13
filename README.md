@@ -144,29 +144,6 @@ Use bullet points. If uncertain, mention it clearly.
 
 ---
 
-## Directory Structure
-
-
-├── main.py                  # FastAPI backend
-├── temp/                    # Temporary image upload directory
-├── models/
-│   ├── User.js              # Mongoose User Schema
-│   └── Session.js           # Mongoose Session Schema
-└── README.md
-
-
----
-
-## Contributing
-
-1. Fork the repo
-2. Create your feature branch (git checkout -b feat/something)
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
----
-
 ## License
 
 This project is licensed under the MIT License.
