@@ -10,10 +10,10 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins
+    allow_origins=["http://localhost:3000"],  # Your Next.js dev server
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods
-    allow_headers=["*"],  # Allows all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Initialize Ollama client once
@@ -169,4 +169,4 @@ Respond concisely and use bullet points for each condition. If uncertain, note i
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("Fastapi:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
